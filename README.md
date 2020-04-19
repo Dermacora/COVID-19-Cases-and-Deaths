@@ -4,4 +4,4 @@ This R shiny app displays visual representations of COVID-19 incident cases, cum
 
 The files available in this repository can be used to either run the shiny app offline, or to host your own app. This app is hosted at https://ermacora.shinyapps.io/covid-19/
 
-![](images/shiny-app.png)
+![](/shiny-app.png)
