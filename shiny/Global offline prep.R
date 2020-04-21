@@ -60,29 +60,6 @@ df3 <- df2 %>%
     mutate(country_region = ifelse(country_region == "Korea, South", "South Korea", country_region))
 
 df3 <-
-df3  %>% 
-    mutate(
-        inc_scaling = case_when(country_region == "China" ~ 100,
-        country_region == "Germany" ~ 1000,
-        country_region == "United States" ~ 5000,
-        country_region == "United Kingdom" ~ 500,
-        country_region == "Italy" ~ 1000,
-        country_region == "Spain" ~ 1000,
-        country_region == "Iran" ~ 400,
-        country_region == "South Korea" ~ 100,
-        TRUE ~  NaN 
-    ),
-    cum_scaling = case_when(country_region == "China" ~ 200,
-                            country_region == "Germany" ~ 2000,
-                            country_region == "United States" ~ 20000,
-                            country_region == "United Kingdom" ~ 5000,
-                            country_region == "Italy" ~ 10000,
-                            country_region == "Spain" ~ 10000,
-                            country_region == "Iran" ~ 5000,
-                            country_region == "South Korea" ~ 1000,
-                            TRUE ~  NaN 
-    )
-) %>% select(-c(inc_scaling, cum_scaling))
 
 
 df3 <- 
@@ -115,18 +92,6 @@ deaths <- deaths %>%
     data.frame()  %>% 
     mutate(country_region = ifelse(country_region == "US", "United States", country_region))  %>% 
     mutate(country_region = ifelse(country_region == "Korea, South", "South Korea", country_region))  %>% 
-    mutate(
-        death_scaling = case_when(country_region == "China" ~ 50,
-                                 country_region == "Germany" ~ 500,
-                                 country_region == "United States" ~ 2000,
-                                 country_region == "United Kingdom" ~ 1000,
-                                 country_region == "Italy" ~ 2000,
-                                 country_region == "Spain" ~ 2000,
-                                 country_region == "Iran" ~ 500,
-                                 country_region == "South Korea" ~ 20,
-                                 TRUE ~ NaN # This is an else statement
-        )
-    )  %>% 
     rename(deaths = summed_cumulative_cases)
 
 deaths <- deaths %>%
