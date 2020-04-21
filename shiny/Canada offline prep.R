@@ -46,60 +46,6 @@ Canada <-
      )
   ) %>%
   mutate(
-    inc_scaling = case_when(prname == "Canada" ~ 200,
-                            prname == "Alberta" ~ 25,
-                            prname == "British Columbia" ~ 25,
-                            prname == "Manitoba" ~ 5,
-                            prname == "New Brunswick" ~ 2,
-                            prname == "Newfoundland and Labrador" ~ 10,
-                            prname == "Northwest Territories" ~ 1,
-                            prname == "Nova Scotia" ~ 5,
-                            prname == "Nunavut" ~ 1,
-                            prname == "Ontario" ~ 50,
-                            prname == "Prince Edward Island" ~ 1,
-                            prname == "Quebec" ~ 200,
-                            prname == "Saskatchewan" ~ 5,
-                            prname == "Yukon" ~ 1,
-                            TRUE ~ NaN # This is an else statement
-    )
-  ) %>%
-  mutate(
-    cum_scaling = case_when(prname == "Canada" ~ 2000,
-                            prname == "Alberta" ~ 200,
-                            prname == "British Columbia" ~ 200,
-                            prname == "Manitoba" ~ 25,
-                            prname == "New Brunswick" ~ 10,
-                            prname == "Newfoundland and Labrador" ~ 20,
-                            prname == "Northwest Territories" ~ 1,
-                            prname == "Nova Scotia" ~ 25,
-                            prname == "Nunavut" ~ 1,
-                            prname == "Ontario" ~ 500,
-                            prname == "Prince Edward Island" ~ 2,
-                            prname == "Quebec" ~ 1000,
-                            prname == "Saskatchewan" ~ 25,
-                            prname == "Yukon" ~ 1,
-                            TRUE ~ NaN # This is an else statement
-    )
-  ) %>%
-  mutate(
-    death_scaling = case_when(prname == "Canada" ~ 50,
-                              prname == "Alberta" ~ 5,
-                              prname == "British Columbia" ~ 5,
-                              prname == "Manitoba" ~ 1,
-                              prname == "New Brunswick" ~ 1,
-                              prname == "Newfoundland and Labrador" ~ 1,
-                              prname == "Northwest Territories" ~ 1,
-                              prname == "Nova Scotia" ~  1,
-                              prname == "Nunavut" ~  1,
-                              prname == "Ontario" ~ 20,
-                              prname == "Prince Edward Island" ~  1,
-                              prname == "Quebec" ~ 20,
-                              prname == "Saskatchewan" ~  1,
-                              prname == "Yukon" ~  1,
-                              TRUE ~ NaN # This is an else statement
-    )
-  ) %>%
-  mutate(
     inc_per_100000 = case_when(prname == "Canada" ~ (incident_cases/37590000)*100000,
                                   prname == "Alberta" ~ (incident_cases/4335768)*100000,
                                   prname == "British Columbia" ~ (incident_cases/5031893)*100000,
