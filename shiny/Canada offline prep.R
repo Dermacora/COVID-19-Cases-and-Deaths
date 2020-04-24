@@ -81,7 +81,6 @@ Canada <-
                                   TRUE ~ NaN # This is an else statement
     )
   ) %>%
-  select(-c(inc_scaling, cum_scaling, death_scaling)) %>%
   select(-c(prnameFR, numtested, numtoday, numtotal, numprob, pruid, numrecover, percentrecover, ratetested, percentoday)) %>%
   mutate(prname = ifelse(prname == "Canada", "All", as.character(prname)), mycolour = prname, infected_per_100000 = round(infected_per_100000, 3)) %>%
   mutate(incident_cases = ifelse(incident_cases <0, 0, as.numeric(incident_cases))) %>%
